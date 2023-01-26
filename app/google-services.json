@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1018658290311",
+    "project_id": "scoresapp-f5258",
+    "storage_bucket": "scoresapp-f5258.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018658290311:android:fe64ae74966487cbc0d622",
+        "android_client_info": {
+          "package_name": "com.xaivison.scoreappfb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018658290311-jjldeua3qpcud7e7ulcrqpd9ihdieq5e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyea4JfOZa1H_vGIEguyDgT8ggt4IpOIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018658290311-jjldeua3qpcud7e7ulcrqpd9ihdieq5e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
