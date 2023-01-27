@@ -13,17 +13,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.firebase.firestore.FirebaseFirestore
 import com.xaivison.scoreappfb.ui.theme.ScoreAppFBTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             ScoreAppFBTheme {
 
-                val db = FirebaseFirestore.getInstance()
-                val user:MutableMap<String,Any> = HashMap()
-                user["firstname"]= "Joe"
-                user["lastname"]= "James"
+//                val db = FirebaseFirestore.getInstance()
+//                val user:MutableMap<String,Any> = HashMap()
+//                user["firstname"]= "Joe"
+//                user["lastname"]= "James"
 
 
 
@@ -33,10 +35,11 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
 
-                    db.collection("users")
-                        .add(user)
-                        .addOnSuccessListener { Log.d("FB","onCreate: ${it.id}") }
-                        .addOnFailureListener{(Log.d("FB","onCreate: $it"))}
+//                    db.collection("users")
+//                        .add(user)
+//                        .addOnSuccessListener { Log.d("F
+//                        B","onCreate: ${it.id}") }
+//                        .addOnFailureListener{(Log.d("FB","onCreate: $it"))}
                     Greeting("Android")
                 }
             }
