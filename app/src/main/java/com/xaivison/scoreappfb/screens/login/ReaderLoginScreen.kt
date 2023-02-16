@@ -31,11 +31,15 @@ import com.xaivison.scoreappfb.R
 import com.xaivison.scoreappfb.components.EmailInput
 import com.xaivison.scoreappfb.components.PasswordInput
 import com.xaivison.scoreappfb.components.ScoresAppLogo
+import com.xaivison.scoreappfb.navigation.ReaderScreens
 
 
 @Composable
 fun ReaderLoginScreen(
     navController: NavController,
+    viewModel: LoginScreenViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
+
+
 ) {
     val showLoginForm = rememberSaveable { mutableStateOf(true) }
     Surface(modifier = Modifier.fillMaxSize()) {
@@ -43,27 +47,28 @@ fun ReaderLoginScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
         ) {
-
-
             ScoresAppLogo()
-
             if (showLoginForm.value)
                 UserForm(
                     loading = false,
                     isCreateAccount = false
                 ) { email, password ->
-//                Log.d("Form", "ReaderLoginScreen: $email $password")
-                    // TODO FB Login
+                    viewModel.signInWithEmailAndPassword(email, password){
+                        navController.navigate(ReaderScreens.ReaderHomeScreen.name)
+                    }
                 }
             else {
                 UserForm(
                     loading = false,
                     isCreateAccount = true
-                ) { email, password -> //TODO Create FB Account
+                ) { email, password ->
+                viewModel.createUserWithEmailAndPassword(email, password){
+                    navController.navigate(ReaderScreens.ReaderHomeScreen.name)
+                }
                 }
             }
         }
-        Spacer(modifier = Modifier.height(50.dp))
+        Spacer(modifier = Modifier.height(15.dp))
         Row(
             modifier = Modifier.padding(15.dp),
             horizontalArrangement = Arrangement.Center,
@@ -113,7 +118,7 @@ fun UserForm(
     ) {
         if (isCreateAccount) Text(
             text = stringResource(id = R.string.create_acct),
-            modifier = Modifier.padding(14.dp)
+            modifier = Modifier.padding(start = 10.dp, end = 10.dp)
         ) else Text("")
         EmailInput(
             emailState = email,

@@ -17,6 +17,9 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 import com.xaivison.scoreappfb.navigation.ReaderScreens
 import kotlinx.coroutines.delay
 import com.xaivison.scoreappfb.components.ScoresAppLogo
@@ -37,9 +40,13 @@ fun ReaderSplashScreen(
         }))
         delay(2000L)
 
+//        if(FirebaseAuth.getInstance().currentUser?.email.isNullOrEmpty()){
+//            navController.navigate(ReaderScreens.LoginScreen.name)
+//        }
+//        else{
+//            navController.navigate(ReaderScreens.ReaderHomeScreen.name)
+//        }
         navController.navigate(ReaderScreens.LoginScreen.name)
-
-
     }
     Surface(modifier = Modifier
         .padding(40.dp)

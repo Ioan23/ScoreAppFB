@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.sp
 fun ScoresAppLogo(modifier: Modifier = Modifier) {
 
     Text(
-        modifier = modifier.padding(16.dp),
+        modifier = modifier.padding(5.dp),
         text = "Bizantin music",
         style = MaterialTheme.typography.h4,
         color = Color.Red.copy(alpha = 0.5f)
@@ -77,7 +77,7 @@ fun InputField(
             color = MaterialTheme.colors.onBackground
         ),
         modifier = modifier
-            .padding(bottom = 10.dp, start = 10.dp, end = 10.dp)
+            .padding(bottom = 5.dp, start = 10.dp, end = 10.dp)
             .fillMaxWidth(),
         enabled = enabled,
         keyboardOptions = KeyboardOptions(keyboardType = keyboardType, imeAction = imeAction),
@@ -110,7 +110,7 @@ fun PasswordInput(
             color = MaterialTheme.colors.onBackground
         ),
         modifier = modifier
-            .padding(bottom = 10.dp, start = 10.dp, end = 10.dp)
+            .padding(bottom = 5.dp, start = 10.dp, end = 10.dp)
             .fillMaxWidth(),
         enabled = enabled,
 
